@@ -61,4 +61,7 @@ bash
 Copier le code
 php bin/phpunit
 Contributions
+
+Dans cette API, certains mots sont exclus de l'analyse des mots-clés des articles de blog. Ces mots-clés bannis sont définis dans le fichier services.yaml à l'aide du paramètre banned_words.
+
 Les contributions sont les bienvenues ! Veuillez soumettre un pull request pour toute amélioration ou correction.
