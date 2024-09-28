@@ -1,0 +1,64 @@
+Sobrus Symfony API Test
+Bienvenue dans le projet Sobrus Symfony API Test. Ce projet est une API de gestion d'articles de blog construite avec Symfony 5.4. Il inclut l'authentification JWT, des opérations CRUD, la validation des données, et la documentation de l'API via Postman.
+
+Fonctionnalités
+Authentification JWT : Protégez vos endpoints avec un système d'authentification par token.
+CRUD complet : Créez, lisez, mettez à jour et supprimez des articles de blog.
+Validation : Les données saisies sont validées avant l'enregistrement.
+
+Installation
+Prérequis
+PHP 7.4 ou version supérieure
+Composer
+Symfony 5.4
+MySQL ou un autre serveur de base de données compatible
+Étapes
+Clonez le projet :
+
+bash
+Copier le code
+git clone https://github.com/ton-utilisateur/sobrus-symfony-api-test.git
+Accédez au dossier du projet :
+
+bash
+Copier le code
+cd sobrus-symfony-api-test
+Installez les dépendances :
+
+bash
+Copier le code
+composer install
+Configurez les variables d'environnement dans le fichier .env.
+
+Mettez à jour le schéma de base de données :
+
+bash
+Copier le code
+php bin/console doctrine:schema:update --force
+Démarrez le serveur Symfony :
+
+bash
+Copier le code
+symfony server:start
+Usage
+Authentification
+Créez un utilisateur avec l'endpoint /register.
+Connectez-vous avec les identifiants créés pour obtenir un token JWT.
+Utilisez ce token pour authentifier les requêtes sur les endpoints sécurisés.
+Endpoints
+GET /articles : Récupère la liste des articles(authentification requise).
+POST /articles : Crée un nouvel article (authentification requise).
+GET /articles/{id} : Récupère les détails d'un article(authentification requise).
+POST /articles/{id} : Met à jour un article (authentification requise).
+DELETE /articles/{id} : Supprime un article (authentification requise).
+Documentation API
+La documentation de l'API est disponible via Postman. Vous pouvez importer le fichier Postman Collection fourni dans le dépôt pour explorer et tester facilement les endpoints.
+
+Tests
+Lancez les tests avec la commande suivante :
+
+bash
+Copier le code
+php bin/phpunit
+Contributions
+Les contributions sont les bienvenues ! Veuillez soumettre un pull request pour toute amélioration ou correction.
