@@ -1,0 +1,673 @@
+{
+	"info": {
+		"_postman_id": "e18729b3-8662-4151-9d0f-32c2c2afba48",
+		"name": "Sobrus-symfony-api-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14603080"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/ld+json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"admin@email.com\",\r\n    \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"admin@email.com\",\r\n    \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add blog articles",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3Mjc1MzM0NDgsImV4cCI6MTcyNzUzNzA0OCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiYWRtaW5AZW1haWwuY29tIn0.iCG2r6PiUSe6WbRfWk5HNTJBfgPbh7y1b2vpTQS6ljBgt99dpmlFOJpGoxvmNlMhW_ocE2KFEZgdJjrlTnGpHsdgshuG6zdGubZwsc1rnz18oIaJFypke856JzDGXY3aYKlnyeXYH-xlxgrMZpiJCTZp7S3zlQNxjCc0KCEiDFHHHnRDdDVBFdi891P_tyy-5tgs9ZiL7jeIoS8xNxNhF4sJJHmZ0cGIEyuqi58DEV-2IkKsjkWRziPkp_ax01CrRnuvMgt7wpk56UCwwcWx8Wh3kOqlrDWCRo_pJlH4Cy15wG_KA2m5mH_fhSgLWHTVVc0Zlm691W_-cNCSCvGnZA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/ayoub/Desktop/gitLabProject/ocr-cin-ma-nouveau-version/image_test/Capture.PNG"
+						},
+						{
+							"key": "title",
+							"value": "dfdff",
+							"type": "text"
+						},
+						{
+							"key": "publicationDate",
+							"value": "2024-09-28",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "test content",
+							"type": "text"
+						},
+						{
+							"key": "slug",
+							"value": "gdg",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "published",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/blog-articles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"blog-articles"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "add blog",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/ayoub/Desktop/gitLabProject/ocr-cin-ma-nouveau-version/image_test/Capture.PNG"
+								},
+								{
+									"key": "title",
+									"value": "dfdff",
+									"type": "text"
+								},
+								{
+									"key": "publicationDate",
+									"value": "2024-09-28",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "test content",
+									"type": "text"
+								},
+								{
+									"key": "keywords[]",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "slug",
+									"value": "gdg",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "published",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/blog-articles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"blog-articles"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 28 Sep 2024 14:25:05 GMT"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "sf_redirect=%7B%22token%22%3A%22acec2d%22%2C%22route%22%3A%22app_blogarticle_createblogarticle%22%2C%22method%22%3A%22POST%22%2C%22controller%22%3A%7B%22class%22%3A%22App%5C%5CController%5C%5CBlogArticleController%22%2C%22method%22%3A%22createBlogArticle%22%2C%22file%22%3A%22C%3A%5C%5CUsers%5C%5Cayoub%5C%5CDesktop%5C%5CSobrus-symfony-api-test%5C%5Csrc%5C%5CController%5C%5CBlogArticleController.php%22%2C%22line%22%3A33%7D%2C%22status_code%22%3A201%2C%22status_text%22%3A%22Created%22%7D; path=/; httponly; samesite=lax"
+						},
+						{
+							"key": "X-Debug-Token",
+							"value": "acec2d"
+						},
+						{
+							"key": "X-Debug-Token-Link",
+							"value": "http://localhost:8000/_profiler/acec2d"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.33"
+						},
+						{
+							"key": "X-Robots-Tag",
+							"value": "noindex"
+						},
+						{
+							"key": "Content-Length",
+							"value": "33"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"Blog article created\"\n}"
+				}
+			]
+		},
+		{
+			"name": "edit blog articles",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3Mjc1MzM0NDgsImV4cCI6MTcyNzUzNzA0OCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiYWRtaW5AZW1haWwuY29tIn0.iCG2r6PiUSe6WbRfWk5HNTJBfgPbh7y1b2vpTQS6ljBgt99dpmlFOJpGoxvmNlMhW_ocE2KFEZgdJjrlTnGpHsdgshuG6zdGubZwsc1rnz18oIaJFypke856JzDGXY3aYKlnyeXYH-xlxgrMZpiJCTZp7S3zlQNxjCc0KCEiDFHHHnRDdDVBFdi891P_tyy-5tgs9ZiL7jeIoS8xNxNhF4sJJHmZ0cGIEyuqi58DEV-2IkKsjkWRziPkp_ax01CrRnuvMgt7wpk56UCwwcWx8Wh3kOqlrDWCRo_pJlH4Cy15wG_KA2m5mH_fhSgLWHTVVc0Zlm691W_-cNCSCvGnZA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/ayoub/Desktop/gitLabProject/ocr-cin-ma-nouveau-version/image_test/Capture.PNG"
+						},
+						{
+							"key": "title",
+							"value": "dfdff",
+							"type": "text"
+						},
+						{
+							"key": "publicationDate",
+							"value": "2024-09-28",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "This is a sample text. This text is for testing the sample text.",
+							"type": "text"
+						},
+						{
+							"key": "slug",
+							"value": "gdg",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "published",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/blog-articles/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"blog-articles",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "exemple validation banned keyWords",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/ayoub/Desktop/gitLabProject/ocr-cin-ma-nouveau-version/image_test/Capture.PNG"
+								},
+								{
+									"key": "title",
+									"value": "dfdff",
+									"type": "text"
+								},
+								{
+									"key": "publicationDate",
+									"value": "2024-09-28",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "This is a sample text. This text is for testing the sample text.",
+									"type": "text"
+								},
+								{
+									"key": "keywords[]",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "slug",
+									"value": "gdg",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "published",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/blog-articles/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"blog-articles",
+								"1"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 28 Sep 2024 14:25:33 GMT"
+						},
+						{
+							"key": "X-Debug-Token",
+							"value": "e4cde3"
+						},
+						{
+							"key": "X-Debug-Token-Link",
+							"value": "http://localhost:8000/_profiler/e4cde3"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.33"
+						},
+						{
+							"key": "X-Robots-Tag",
+							"value": "noindex"
+						},
+						{
+							"key": "Content-Length",
+							"value": "60"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Your content contains banned words: is, for, the\"\n}"
+				}
+			]
+		},
+		{
+			"name": "get blog-articles",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3Mjc1MzM0NDgsImV4cCI6MTcyNzUzNzA0OCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiYWRtaW5AZW1haWwuY29tIn0.iCG2r6PiUSe6WbRfWk5HNTJBfgPbh7y1b2vpTQS6ljBgt99dpmlFOJpGoxvmNlMhW_ocE2KFEZgdJjrlTnGpHsdgshuG6zdGubZwsc1rnz18oIaJFypke856JzDGXY3aYKlnyeXYH-xlxgrMZpiJCTZp7S3zlQNxjCc0KCEiDFHHHnRDdDVBFdi891P_tyy-5tgs9ZiL7jeIoS8xNxNhF4sJJHmZ0cGIEyuqi58DEV-2IkKsjkWRziPkp_ax01CrRnuvMgt7wpk56UCwwcWx8Wh3kOqlrDWCRo_pJlH4Cy15wG_KA2m5mH_fhSgLWHTVVc0Zlm691W_-cNCSCvGnZA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"admin@email.com\",\r\n    \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/blog-articles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"blog-articles"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get blog-articles",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@email.com\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/blog-articles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"blog-articles"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 28 Sep 2024 14:27:04 GMT"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "sf_redirect=deleted; expires=Fri, 29-Sep-2023 14:27:03 GMT; Max-Age=0; path=/; httponly"
+						},
+						{
+							"key": "X-Debug-Token",
+							"value": "c6eca5"
+						},
+						{
+							"key": "X-Debug-Token-Link",
+							"value": "http://localhost:8000/_profiler/c6eca5"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.33"
+						},
+						{
+							"key": "X-Robots-Tag",
+							"value": "noindex"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1052"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"authorId\": 1,\n        \"title\": \"dfdff\",\n        \"publicationDate\": \"2024-01-01T00:00:00+01:00\",\n        \"creationDate\": \"2024-09-28T02:14:03+02:00\",\n        \"content\": \"qgg\",\n        \"keywords\": [\n            \"test\"\n        ],\n        \"status\": \"deleted\",\n        \"slug\": \"gdg\",\n        \"coverPictureRef\": \"973334835329d6508928f4c70d56294c.png\"\n    },\n    {\n        \"id\": 2,\n        \"authorId\": 1,\n        \"title\": \"dfdff\",\n        \"publicationDate\": \"2024-01-01T00:00:00+01:00\",\n        \"creationDate\": \"2024-09-28T02:59:44+02:00\",\n        \"content\": \"This\",\n        \"keywords\": [\n            \"this\"\n        ],\n        \"status\": \"deleted\",\n        \"slug\": \"gdg\",\n        \"coverPictureRef\": \"f0f139a3ef61e130139138ce3dfc97fa.png\"\n    },\n    {\n        \"id\": 3,\n        \"authorId\": 1,\n        \"title\": \"dfdff\",\n        \"publicationDate\": \"2024-09-28T00:00:00+02:00\",\n        \"creationDate\": \"2024-09-28T16:25:04+02:00\",\n        \"content\": \"test content\",\n        \"keywords\": [\n            \"test\",\n            \"content\"\n        ],\n        \"status\": \"published\",\n        \"slug\": \"gdg\",\n        \"coverPictureRef\": \"1613c3e46f2c0d6a8c4f447ea8fbd128.png\"\n    },\n    {\n        \"id\": 4,\n        \"authorId\": 1,\n        \"title\": \"dfdff\",\n        \"publicationDate\": \"2024-09-28T00:00:00+02:00\",\n        \"creationDate\": \"2024-09-28T16:26:50+02:00\",\n        \"content\": \"test content\",\n        \"keywords\": [\n            \"test\",\n            \"content\"\n        ],\n        \"status\": \"published\",\n        \"slug\": \"gdg\",\n        \"coverPictureRef\": \"454dc720229a4a55f8fff2f7cc932104.png\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "get blog-articles by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3Mjc0ODIzMTcsImV4cCI6MTcyNzQ4NTkxNywicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiYWRtaW5AZW1haWwuY29tIn0.h2DWrW1sSTfTdpmIXj_k301mzW7pRKVV0FlItTeWujR1xyaIf225tBhAOucv3F8nkBdJ30IuqzLi9F9boidjqGyTXQIZYxvuGnSUNpuxxz60WuzXZ100t0iAQvvhpe7RoD4-TaarWWAXUqCDT4DILs962ztubZ10YH6-ZykqzttS3cYLHr8bQz2b_LzpufAGTt7TMhDMRvbHURUYYcFixNjWIYRkK4wSQyrLkbCZKhW18SbyvJpAXLSqC5RthrTzMJVgvusMi1XUnO98HE-PVo5Qc5xahEsrS9dq92it71jYl8kSPK-qlOXsunAHS3B3JIENNq9Bl8g73X3gMZIVww",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"admin@email.com\",\r\n    \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/blog-articles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"blog-articles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete blog-articles",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3Mjc1MzM0NDgsImV4cCI6MTcyNzUzNzA0OCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiYWRtaW5AZW1haWwuY29tIn0.iCG2r6PiUSe6WbRfWk5HNTJBfgPbh7y1b2vpTQS6ljBgt99dpmlFOJpGoxvmNlMhW_ocE2KFEZgdJjrlTnGpHsdgshuG6zdGubZwsc1rnz18oIaJFypke856JzDGXY3aYKlnyeXYH-xlxgrMZpiJCTZp7S3zlQNxjCc0KCEiDFHHHnRDdDVBFdi891P_tyy-5tgs9ZiL7jeIoS8xNxNhF4sJJHmZ0cGIEyuqi58DEV-2IkKsjkWRziPkp_ax01CrRnuvMgt7wpk56UCwwcWx8Wh3kOqlrDWCRo_pJlH4Cy15wG_KA2m5mH_fhSgLWHTVVc0Zlm691W_-cNCSCvGnZA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"admin@email.com\",\r\n    \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/blog-articles/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"blog-articles",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "delete blog-articles",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@email.com\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/blog-articles/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"blog-articles",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 28 Sep 2024 14:28:03 GMT"
+						},
+						{
+							"key": "X-Debug-Token",
+							"value": "a5fda0"
+						},
+						{
+							"key": "X-Debug-Token-Link",
+							"value": "http://localhost:8000/_profiler/a5fda0"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.33"
+						},
+						{
+							"key": "X-Robots-Tag",
+							"value": "noindex"
+						},
+						{
+							"key": "Content-Length",
+							"value": "38"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"Blog article soft deleted\"\n}"
+				}
+			]
+		}
+	]
+}
